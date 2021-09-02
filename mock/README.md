@@ -1,5 +1,5 @@
 # MOCK 系统
->  无第三方库依赖，利用webpack dev server的特性进行请求的mock
+>  无第三方库依赖，利用webpack dev server 的app.use() 的特性进行请求的mock
 
 # HOW TO USE
 

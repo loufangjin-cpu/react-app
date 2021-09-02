@@ -1,3 +1,4 @@
+// path: ./opapi/sms/list  controller:true
 function getApi(path, controller, timeout) {
   return async (req, res) => {
     let common = {},

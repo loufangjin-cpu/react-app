@@ -16,9 +16,13 @@ function Mocker(app) {
     }
     if (mockConfig.enable) {
       const path = req.path.split('?')[0]
+      // /opapi/sms/list
       console.log('req:', req.path)
+      //  /opapi/sms/list
+      console.log('path', path)
       if (mockConfig.api[path]) {
-        console.log('mock:', req.path)
+        // /opapi/sms/list { '/opapi/sms/list': [AsyncFunction (anonymous)] }
+        console.log('mock:', req.path, mockConfig.api)
         const data = await mockConfig.api[path](req, { getPayLoad })
         data._debug = {
           msg: '这是一个mock数据'
