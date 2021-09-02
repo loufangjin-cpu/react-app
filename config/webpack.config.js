@@ -334,6 +334,8 @@ module.exports = function (webpackEnv) {
           'react-dom$': 'react-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling'
         }),
+        // 文件路径别名
+        '@': path.resolve(__dirname, '../src'),
         ...(modules.webpackAliases || {})
       },
       plugins: [
@@ -542,11 +544,11 @@ module.exports = function (webpackEnv) {
               use: getStyleLoaders(
                 {
                   importLoaders: 1,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  sourceMap: isEnvProduction && shouldUseSourceMap
                 },
                 'less-loader'
               ),
-              sideEffects: true,
+              sideEffects: true
             },
             {
               test: lessModuleRegex,
@@ -558,7 +560,7 @@ module.exports = function (webpackEnv) {
                   getLocalIdent: getCSSModuleLocalIdent
                 },
                 'less-loader'
-              ),
+              )
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
