@@ -1,0 +1,65 @@
+@import '../../styles/variables.less';
+@import '../../styles/mixins.less';
+@media screen and (min-width: 931px) { 
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .navbar-logo{
+        display: flex;
+        align-items: center;
+        .img-logo{
+            height:47px
+        }
+    }
+    .flex{
+        display: flex;
+        align-items: center;
+    }
+    .navbar-link{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+}
+@media screen and (min-width: 650px) and (max-width: 930px) {
+    .navbar{
+        .navbar-logo{
+            display: block;
+            .img-logo{
+                height:47px
+            }
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+        }
+        .navbar-link{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+}
+@media screen and  (min-width: 120px) and (max-width: 649px){
+    .navbar{
+        .navbar-logo{
+            display: block;
+            .img-logo{
+                height:47px
+            }
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .navbar-link{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+}

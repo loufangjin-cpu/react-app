@@ -1,0 +1,83 @@
+@import './variables.less';
+
+.@{ant-prefix}-spin-container {
+    .@{ant-prefix}-card {
+        background: none;
+        border: none;
+        &:hover {
+            box-shadow: none;
+        }
+        .@{ant-prefix}-card-body {
+            padding: 0px;
+            .@{ant-prefix}-table {
+                background: linear-gradient(219deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%);
+                border-radius: 16px;
+                overflow: hidden;
+                border: none;
+                .@{ant-prefix}-table-title {
+                    background-color: #fff;
+                    padding: 20px;
+                    .search {
+                        display: flex;
+                        .@{ant-prefix}-btn {
+                            margin-right: 10px;
+                        }
+                        .@{ant-prefix}-input-affix-wrapper {
+                            width: auto;
+                            margin-right: 10px;
+                            .@{ant-prefix}-input {
+                                width: 200px;
+                                height: 32px;
+                                border-radius: 16px;
+                                border: 1px solid rgba(92, 125, 184, 0.6);
+                                &::placeholder {
+                                    color: rgba(92, 125, 184, 0.6);
+                                }
+                            }
+                            .search_icon {
+                                width: 21px;
+                                height: 21px;
+                                color: #5c7db8;
+                                opacity: 0.69;
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+                .@{ant-prefix}-table-thead > tr > th {
+                    background: none;
+                    color: #5c7db8;
+                    border-bottom: none;
+                    .@{ant-prefix}-table-column-sorter-inner-full {
+                        color: #5c7db8;
+                    }
+                }
+                .@{ant-prefix}-table-tbody > tr > td {
+                    border-bottom: none;
+                }
+                .@{ant-prefix}-table-tbody {
+                    background-color: #fff;
+                    .ant-table-row:nth-child(even) {
+                        background-color: #fafcfe;
+                    }
+                }
+                .@{ant-prefix}-table-scroll {
+                    .@{ant-prefix}-table-thead {
+                        background: linear-gradient(248deg, #d5e5ff 0%, #d6dbfa 100%);
+                    }
+                }
+                .@{ant-prefix}-table-fixed-left {
+                    .@{ant-prefix}-table-thead {
+                        background: #d6dbfa;
+                    }
+                }
+                .@{ant-prefix}-table-fixed-right {
+                    .@{ant-prefix}-table-thead {
+                        background: #d5e5ff;
+                    }
+                }
+            }
+        }
+    }
+}

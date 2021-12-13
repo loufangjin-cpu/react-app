@@ -1,5 +1,4 @@
 const { createProxyMiddleware } = require('http-proxy-middleware')
-// const apiUrl = 'https://test.ipalfish.com/' // 测试
 
 module.exports = function (app) {
   // app.use(

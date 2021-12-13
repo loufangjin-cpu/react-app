@@ -1,0 +1,65 @@
+@import './variables.less';
+
+.@{ant-prefix}-layout-content {
+    > .@{ant-prefix}-card {
+        background: linear-gradient(219deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%);
+        border-radius: 16px;
+        border: none;
+        .@{ant-prefix}-form-item-label > label {
+            color: #44577A;
+            &::after {
+                content: '';
+            }
+        }
+        .@{ant-prefix}-select-selection__placeholder {
+            color: #5C7DB8;
+        }
+        input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: #5C7DB8;
+        }
+        input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #5C7DB8;
+        }
+        input::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #5C7DB8;
+        }
+        input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color:  #5C7DB8;
+        }
+        input::-ms-input-placeholder { /* Microsoft Edge */
+            color: #5C7DB8;
+        }
+        .@{ant-prefix}-select-selection,
+        .@{ant-prefix}-input {
+            border: none;
+            border-radius: 8px;
+            .@{ant-prefix}-calendar-range-picker-separator {
+                color: #5C7DB8
+            }
+            .@{ant-prefix}-calendar-picker-icon {
+                color: #7D97C6;
+            }
+        }
+        .palfish_input_number_wrap  {
+            margin: 0;
+            .@{ant-prefix}-input {
+                border-radius: 0px;
+            }
+        }
+        .palfish_input_number_min {
+            border: none;
+            border-radius: 8px 0 0 8px;
+        }
+        .palfish_input_number_max {
+            border: none;
+            border-radius: 0 8px 8px 0;
+        }
+        .@{ant-prefix}-input,
+        .@{ant-prefix}-select {
+            color: #5196FF;
+            .@{ant-prefix}-select-arrow {
+                color: #c7cdd7;
+            }
+        }
+    }
+}

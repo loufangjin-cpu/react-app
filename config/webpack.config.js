@@ -57,8 +57,8 @@ const useTypeScript = fs.existsSync(paths.appTsConfig)
 const swSrc = paths.swSrc
 
 // style files regexes
-const cssRegex = /\.css$/
-const cssModuleRegex = /\.module\.css$/
+const cssRegex = /\.css｜less$/
+const cssModuleRegex = /\.module\.(css|less)$/
 const sassRegex = /\.(scss|sass)$/
 const sassModuleRegex = /\.module\.(scss|sass)$/
 const lessRegex = /\.less$/
@@ -473,12 +473,15 @@ module.exports = function (webpackEnv) {
             {
               test: cssRegex,
               exclude: cssModuleRegex,
-              use: getStyleLoaders({
-                importLoaders: 1,
-                sourceMap: isEnvProduction
-                  ? shouldUseSourceMap
-                  : isEnvDevelopment
-              }),
+              use: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  sourceMap: isEnvProduction
+                    ? shouldUseSourceMap
+                    : isEnvDevelopment
+                },
+                'less-loader'
+              ),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
               // Remove this when webpack adds a warning or an error for this.
@@ -489,15 +492,18 @@ module.exports = function (webpackEnv) {
             // using the extension .module.css
             {
               test: cssModuleRegex,
-              use: getStyleLoaders({
-                importLoaders: 1,
-                sourceMap: isEnvProduction
-                  ? shouldUseSourceMap
-                  : isEnvDevelopment,
-                modules: {
-                  getLocalIdent: getCSSModuleLocalIdent
-                }
-              })
+              use: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  sourceMap: isEnvProduction
+                    ? shouldUseSourceMap
+                    : isEnvDevelopment,
+                  modules: {
+                    getLocalIdent: getCSSModuleLocalIdent
+                  }
+                },
+                'less-loader'
+              )
             },
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the

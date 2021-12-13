@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
 import { demoRouter } from './demoRouter'
+import App from './App'
 import { createRoutes } from './router'
 import rootRoutes from './router/routeConfig'
-
 import './index.less'
-import App from './App'
 console.log(createRoutes(rootRoutes))
 // import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
