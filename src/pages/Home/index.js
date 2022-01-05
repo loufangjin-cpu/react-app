@@ -3,16 +3,31 @@ import {GlobalContext} from './componets/context'
 import { myReducer } from './componets/reducer';
 import ChildList from './componets/childList';
 import ChildB from './componets/childB';
+import {HOCFactory} from './componets/HOC'
+
 const Home = () => {
   const [stateCount, setStateCount] = useState(0);
   const init = {name: 'hello'}
   const [state, dispatch] = useReducer(myReducer, init)
   const handleCountClick = () => {
-    // setStateCount((stateCount) => ++stateCount)
-    // setStateCount((stateCount) => ++stateCount)
-    // setStateCount((stateCount) => ++stateCount)
-    // setStateCount((stateCount) => ++stateCount)
+    setStateCount((stateCount) => ++stateCount)
+    setStateCount((stateCount) => ++stateCount)
+    setStateCount((stateCount) => ++stateCount)
+    setStateCount((stateCount) => ++stateCount)
   }
+  // HOC组件的使用
+  const HOC = (props) => {
+    const name = '该组件是自定义的 - HOCFactory组件是一个纯组件'
+    return (
+      <div>
+        hello: {name}
+        <div>
+          title: ==== {props.title}
+        </div>
+      </div>
+    )
+  }
+  const HOCFactory1 = HOCFactory(HOC)
   const handleClick = (e) => {
     e.preventDefault() // 阻止默认行为
     e.stopPropagation() // 阻止冒泡
@@ -35,14 +50,24 @@ const Home = () => {
   return <>
     <a href='https://www.baidu.com' onClick={handleClick}>点击验证react的组合事件和vue的区别</a>
     <div>
-      验证合并: {stateCount}
+      验证合并事件: {stateCount}
       <button onClick={handleCountClick}>点击</button>
     </div>
-
-    <GlobalContext.Provider value={[state, dispatch]}>
-      <ChildList />
-      <ChildB />
-    </GlobalContext.Provider>
+    ===================
+    <div>
+      context 上下文模拟：
+      <GlobalContext.Provider value={[state, dispatch]}>
+        <ChildList />
+        <ChildB />
+      </GlobalContext.Provider>
+    </div>
+    =================
+    HOC组件
+    <div>
+      {
+        <HOCFactory1 title='title'/>
+      }
+    </div>
   </>
 }
 
