@@ -1,4 +1,4 @@
-export default { "TABLE": { "columns": {
+module.exports =  { "TABLE": { "columns": {
   hello: '美好的世界',
   name: '我的名字'
 } } }
