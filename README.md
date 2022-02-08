@@ -10,3 +10,6 @@
 # 4:  表单、 table、 modal 封装
 
 # 5: 多语言配置 react-intl-universal
+- intl.init()
+- intl.load()
+- intl.getInitOptions()

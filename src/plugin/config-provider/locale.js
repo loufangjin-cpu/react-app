@@ -12,6 +12,7 @@ export default function useUpdateLocale(locale = []) {
     const { locales: lastLocales } = intl.getInitOptions();
     const currentLocale = curLocale.toLowerCase().replace(/_/, '-');
     const fullLocales = lodash.merge({}, lastLocales, locales);
+    console.log('fullLocales', fullLocales)
     const warningHandler = () => {}; // TODO: 由于正常情况下也会warning，所以暂时忽略。参数：message, detail
     intl.init({ currentLocale, warningHandler, locales: fullLocales, fallbackLocale: 'zh-cn' })
         .then(localeMap.moment[currentLocale]) //动态引入moment语言包
