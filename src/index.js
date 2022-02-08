@@ -5,12 +5,17 @@ import { demoRouter } from './demoRouter'
 import App from './App'
 import { createRoutes } from './router'
 import rootRoutes from './router/routeConfig'
+import { ConfigContextProvider } from './plugin/config-provider';
 import './index.less'
 console.log(createRoutes(rootRoutes))
 // import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   // <Router>{demoRouter()}</Router>,
-  <Router>{createRoutes(rootRoutes)}</Router>,
+  <Router>
+    <ConfigContextProvider>
+        {createRoutes(rootRoutes)}
+      </ConfigContextProvider>
+      </Router>,
   document.getElementById('root')
 )
 

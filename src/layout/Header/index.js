@@ -3,6 +3,8 @@ import { Menu } from 'antd'
 import { Link } from 'react-router-dom'
 import Avatar from '../Avatar'
 import Logo from '../Logo'
+import I18n from '../I18n';
+
 
 const Header = () => {
   return (
@@ -12,7 +14,7 @@ const Header = () => {
       </div> */}
       <div className="navbar-link">
         <span className="flex">
-          {/* <I18n className="I18n" /> */}
+          <I18n className="I18n" />
           <div className="right-menu">
             <Avatar />
           </div>

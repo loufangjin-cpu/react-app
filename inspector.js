@@ -1,3 +1,4 @@
+//! 验证内存泄露
 const inspector = require('inspector');
 const fs = require('fs');
 const session = new inspector.Session();

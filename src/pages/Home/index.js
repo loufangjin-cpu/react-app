@@ -4,6 +4,7 @@ import { myReducer } from './componets/reducer';
 import ChildList from './componets/childList';
 import ChildB from './componets/childB';
 import {HOCFactory} from './componets/HOC'
+import intl from 'react-intl-universal';
 
 const Home = () => {
   const [stateCount, setStateCount] = useState(0);
