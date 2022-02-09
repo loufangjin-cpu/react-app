@@ -1,6 +1,8 @@
 import isEmpty from 'lodash/isEmpty'
 import flattenDeep from 'lodash/flattenDeep'
-
+import intersection from 'lodash/intersection';
+// const authAccess = process.env.BSAPP_AUTH_WAY === 'access';
+const authAccess = true;
 function mergePath() {
   return [].reduce.call(
     arguments,
@@ -75,3 +77,30 @@ export const insertRouteRedirect = (routes = []) => {
     return route
   })
 }
+
+
+// 绑定路由权限
+export const combineRoutePermissions = (routes, authKeys) => {
+  return routes.map((item) => {
+      let hasPermission = true;
+      const { roles, access } = item;
+      // authAccess 存在进行access权限控制过滤
+      if (authAccess) {
+          if (Array.isArray(access) && !isEmpty(access)) {
+              hasPermission = !!intersection(access, authKeys).length;
+          }
+      } else {
+          if (Array.isArray(roles) && !isEmpty(roles)) {
+              hasPermission = !!intersection(roles, authKeys).length;
+          }
+      }
+      if (authKeys === null) hasPermission = true;
+
+      return {
+          ...item,
+          permission: hasPermission,
+          routes:
+              Array.isArray(item.routes) && !isEmpty(item.routes) && combineRoutePermissions(item.routes, authKeys),
+      };
+  });
+};

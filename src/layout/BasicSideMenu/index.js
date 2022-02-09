@@ -14,7 +14,7 @@ const SideMenuBasic = (props) => {
   }
   const renderMenuItem = (item = {}) => {
     const { meta = {}, path, routes, permission, isHiddenInMenu } = item
-
+    // permission true 代表有权限， 没有直接返回false
     if (isHiddenInMenu || permission === false) return null
 
     const MenuTitle = ({ title: tempTitle, icon }) => {

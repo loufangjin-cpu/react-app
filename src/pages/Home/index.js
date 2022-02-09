@@ -21,7 +21,7 @@ const Home = () => {
     const name = '该组件是自定义的 - HOCFactory组件是一个纯组件'
     return (
       <div>
-        hello: {name}
+        hello1111: {name}
         <div>
           title: ==== {props.title}
         </div>

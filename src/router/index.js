@@ -11,11 +11,9 @@ import {
 } from './_util'
 import createRoutes from './createRoutes'
 const routes = inheritParentPathRoles(menus)
-console.log('routes', routes)
 // 获取侧边栏
 export const getSideMenus = (key) => {
   if (!key) return routes
-
   const { routes: sideRoutes } = find(routes, ({ path }) => path === key) || {}
   return sideRoutes || []
 }
@@ -23,4 +21,4 @@ export const pageRoutes = combineComponent(
   flattenRoutes(insertRouteRedirect(routes))
 )
 
-export { createRoutes }
+export { createRoutes, combineRoutePermissions }

@@ -7,6 +7,9 @@
 # 2、项目配置路由、layout
 
 # 3： 路由权限控制？？
+- const sideMenuList = getSideMenus()
+- const sideMenusPermis = combineRoutePermissions(sideMenuList, authorityKeys)
+
 # 4:  表单、 table、 modal 封装
 
 # 5: 多语言配置 react-intl-universal

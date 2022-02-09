@@ -31,6 +31,17 @@ export default [
           title: 'channel',
           icon: <LoginOutlined />
         },
+        access: ['OVER_HOME'],
+        component: React.lazy(() => import('@/pages/About'))
+      },
+      {
+        path: '/channel1',
+        name: 'channel1',
+        meta: {
+          title: 'channel1',
+          icon: <LoginOutlined />
+        },
+        access: [],
         component: React.lazy(() => import('@/pages/About'))
       }
     ]
